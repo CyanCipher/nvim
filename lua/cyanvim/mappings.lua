@@ -25,4 +25,5 @@ vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
 
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
+

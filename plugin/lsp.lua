@@ -14,7 +14,8 @@ lsp_zero.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-    vim.keymap.set({ "x", "n" }, "<leader>gf", function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, opts)
+    vim.keymap.set({ "x", "n" }, "<leader>gf", function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end,
+        opts)
 end)
 
 require('mason').setup({})

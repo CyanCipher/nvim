@@ -122,6 +122,11 @@ _G.packer_plugins = {
     path = "/home/cyan/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  indentLine = {
+    loaded = true,
+    path = "/home/cyan/.local/share/nvim/site/pack/packer/start/indentLine",
+    url = "https://github.com/Yggdroot/indentLine"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/cyan/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -151,6 +156,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cyan/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-autopairs"] = {
+    config = { "\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
+    loaded = true,
+    path = "/home/cyan/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -223,18 +234,27 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cyan/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/cyan/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-dap
-time([[Config for nvim-dap]], true)
-try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\topen\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\nclose­\3\1\0\b\0\25\0;6\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0026\2\0\0'\4\3\0B\2\2\0029\2\4\2B\2\1\0016\2\0\0'\4\2\0B\2\2\0029\2\4\2B\2\1\0016\2\0\0'\4\5\0B\2\2\0029\2\4\2B\2\1\0019\2\6\0009\2\a\0029\2\b\0023\3\n\0=\3\t\0029\2\6\0009\2\a\0029\2\v\0023\3\f\0=\3\t\0029\2\6\0009\2\a\0029\2\r\0023\3\14\0=\3\t\0029\2\6\0009\2\a\0029\2\15\0023\3\16\0=\3\t\0026\2\17\0009\2\18\0029\2\19\2'\4\20\0'\5\21\0009\6\22\0004\a\0\0B\2\5\0016\2\17\0009\2\18\0029\2\19\2'\4\20\0'\5\23\0009\6\24\0004\a\0\0B\2\5\0012\0\0€K\0\1\0\rcontinue\15<leader>dc\22toggle_breakpoint\15<leader>dt\6n\bset\vkeymap\bvim\0\17event_exited\0\21event_terminated\0\vlaunch\0\17dapui_config\vattach\vbefore\14listeners\15dap-python\nsetup\vdap-go\ndapui\bdap\frequire\0", "config", "nvim-dap")
-time([[Config for nvim-dap]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Config for: nvim-tmux-navigation
 time([[Config for nvim-tmux-navigation]], true)
 try_loadstring("\27LJ\2\nÂ\3\0\0\6\0\20\00016\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0B\1\2\0016\1\4\0009\1\5\0019\1\6\1'\3\a\0'\4\b\0009\5\t\0B\1\4\0016\1\4\0009\1\5\0019\1\6\1'\3\a\0'\4\n\0009\5\v\0B\1\4\0016\1\4\0009\1\5\0019\1\6\1'\3\a\0'\4\f\0009\5\r\0B\1\4\0016\1\4\0009\1\5\0019\1\6\1'\3\a\0'\4\14\0009\5\15\0B\1\4\0016\1\4\0009\1\5\0019\1\6\1'\3\a\0'\4\16\0009\5\17\0B\1\4\0016\1\4\0009\1\5\0019\1\6\1'\3\a\0'\4\18\0009\5\19\0B\1\4\1K\0\1\0\25NvimTmuxNavigateNext\14<C-Space>\31NvimTmuxNavigateLastActive\n<C-\\>\26NvimTmuxNavigateRight\n<C-s>\23NvimTmuxNavigateUp\n<C-n>\25NvimTmuxNavigateDown\n<C-t>\25NvimTmuxNavigateLeft\n<C-h>\6n\bset\vkeymap\bvim\1\0\1\24disable_when_zoomed\2\nsetup\25nvim-tmux-navigation\frequire\0", "config", "nvim-tmux-navigation")
 time([[Config for nvim-tmux-navigation]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+try_loadstring("\27LJ\2\n\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\topen\30\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\topen\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\nclose\31\0\0\2\1\1\0\4-\0\0\0009\0\0\0B\0\1\1K\0\1\0\1À\nclose­\3\1\0\b\0\25\0;6\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0026\2\0\0'\4\3\0B\2\2\0029\2\4\2B\2\1\0016\2\0\0'\4\2\0B\2\2\0029\2\4\2B\2\1\0016\2\0\0'\4\5\0B\2\2\0029\2\4\2B\2\1\0019\2\6\0009\2\a\0029\2\b\0023\3\n\0=\3\t\0029\2\6\0009\2\a\0029\2\v\0023\3\f\0=\3\t\0029\2\6\0009\2\a\0029\2\r\0023\3\14\0=\3\t\0029\2\6\0009\2\a\0029\2\15\0023\3\16\0=\3\t\0026\2\17\0009\2\18\0029\2\19\2'\4\20\0'\5\21\0009\6\22\0004\a\0\0B\2\5\0016\2\17\0009\2\18\0029\2\19\2'\4\20\0'\5\23\0009\6\24\0004\a\0\0B\2\5\0012\0\0€K\0\1\0\rcontinue\15<leader>dc\22toggle_breakpoint\15<leader>dt\6n\bset\vkeymap\bvim\0\17event_exited\0\21event_terminated\0\vlaunch\0\17dapui_config\vattach\vbefore\14listeners\15dap-python\nsetup\vdap-go\ndapui\bdap\frequire\0", "config", "nvim-dap")
+time([[Config for nvim-dap]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
