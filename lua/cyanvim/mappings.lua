@@ -24,7 +24,6 @@ vim.keymap.set("n", "<leader>n", "n")
 vim.keymap.set("n", "<leader>wq", "<cmd>wq<CR>")
 vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
-vim.keymap.set("n", "<leader><leader>i", "<cmd>IndentLinesEnable<CR>")
+vim.keymap.set("n", "<leader><leader>i", "<cmd>IBLToggle<CR>")
 
 vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })
-

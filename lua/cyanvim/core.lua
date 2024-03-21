@@ -22,5 +22,6 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.g.vimtex_view_general_viewer = 'zathura'
-vim.g.vimtex_compiler_method = 'pdflatex'
+vim.g.vimtex_compiler_method = 'latexmk'
 vim.maplocalleader = " "
+vim.api.nvim_call_function("codeium#GetStatusString", {})

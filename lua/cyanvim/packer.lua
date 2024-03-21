@@ -34,7 +34,16 @@ return require('packer').startup(function(use)
     }
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true},
+        config = function()
+            local lualine = require('lualine')
+
+            lualine.setup {
+                options = {
+                    theme = 'base16',
+                }
+            }
+        end,
     }
 
     use {
@@ -97,24 +106,59 @@ return require('packer').startup(function(use)
     use { 'nvim-tree/nvim-web-devicons' }
 
     use {
-        'nvimdev/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-            require('dashboard').setup {
-            }
-        end,
-    }
-
-    use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
 
     use {
-        'Yggdroot/indentLine',
-    }
+        'lukas-reineke/indent-blankline.nvim',
+        config = function() require("ibl").setup {
+        }
+        end,
+   }
 
     use {
         'lervag/vimtex',
     }
+
+    use { 
+        'ellisonleao/gruvbox.nvim'
+    }
+
+    use {
+        'Exafunction/codeium.vim',
+      config = function ()
+        -- Change '<C-g>' here to any keycode you like.
+        vim.keymap.set('i', '<C-g>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+        vim.keymap.set('i', '<C-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
+        vim.keymap.set('i', '<C-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+        vim.keymap.set('i', '<C-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+      end,
+    }
+
+    use {
+        'xiyaowong/transparent.nvim'
+    }
+
+    use {
+        'ThePrimeagen/vim-be-good'
+    }
+
+    use {
+        'kepano/flexoki-neovim', as = 'flexoki'
+    }
+
+    use {
+        'RRethy/nvim-base16'
+    }
+
+    use {
+        'mrcjkb/rustaceanvim', as = 'ft'
+    }
+
+    use {
+        'HiPhish/rainbow-delimiters.nvim'
+    }
+
 end)
+
