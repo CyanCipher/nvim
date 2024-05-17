@@ -9,3 +9,5 @@ A simple and lightweight Neovim configuration.
 - Install [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - Run nvim and install packer with :PackerSync
 - Copy the configs folder to `~/.config/nvim`
+- Run :PackerSync again to install all the plugins
+- Done 👍
