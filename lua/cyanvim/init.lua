@@ -1,5 +1,5 @@
 require("cyanvim.mappings")
-require("cyanvim.packer")
+require("cyanvim.pack")
 require("cyanvim.core")
 
 vim.cmd("colorscheme base16-ayu-dark")
