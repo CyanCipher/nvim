@@ -111,13 +111,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'lukas-reineke/indent-blankline.nvim',
-        config = function() require("ibl").setup {
-        }
-        end,
-   }
-
-    use {
         'lervag/vimtex',
     }
 
@@ -153,12 +146,28 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'mrcjkb/rustaceanvim', as = 'ft'
-    }
-
-    use {
         'HiPhish/rainbow-delimiters.nvim'
     }
 
-end)
+    use {
+        'AlphaTechnolog/pywal.nvim', as = 'pywal'
+    }
 
+    use {
+        "nvim-neotest/nvim-nio"
+    }
+
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+        require("which-key").setup {
+        }
+      end
+    }
+
+    use {
+        "nathanaelkane/vim-indent-guides"
+    }
+end)

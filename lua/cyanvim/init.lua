@@ -2,10 +2,7 @@ require("cyanvim.mappings")
 require("cyanvim.packer")
 require("cyanvim.core")
 
-vim.cmd("colorscheme base16-gruber")
+vim.cmd("colorscheme base16-ayu-dark")
 vim.g.indentLine_char = '|'
 vim.g.indentLine_enabled = 0
-
-if vim.g.loaded_dashboard == 0 then
-    vim.cmd("IndenLinesEnable")
-end
+vim.g.codeium_enabled = false
