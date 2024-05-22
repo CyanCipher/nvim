@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 wk.register({
     p = {
         name = "Files",
-        v = { vim.cmd.Ex, "File Manager"}
+        v = { vim.cmd.Oil, "File Manager"}
     },
 }, { prefix = "<leader>" })
 
@@ -36,4 +36,3 @@ vim.keymap.set("n", "s", "l")
 vim.keymap.set("v", "n", "j")
 vim.keymap.set("v", "s", "l")
 
-vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', { noremap = true })

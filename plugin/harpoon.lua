@@ -2,11 +2,9 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 local wk = require("which-key")
 
---vim.keymap.set("n", "<C-e>", "<cmd>Telescope harpoon marks<CR>")
 wk.register({
     ["<leader>h"] = { name = "+Harpoon" },
     ["<leader>ha"] = { mark.add_file, "Add File"},
-    ["<leader>hr"] = { mark.add_file, "Remove File"},
     ["<leader>he"] = { ui.toggle_quick_menu, "Toggle UI Menu"},
     ["<m-h>"] = { function() ui.nav_file(1) end, "Move to first file"},
     ["<m-t>"] = { function() ui.nav_file(2) end, "Move to second file"},

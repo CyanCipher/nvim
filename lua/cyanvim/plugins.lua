@@ -32,6 +32,7 @@ local plugins = {
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
+            { 'hrsh7th/cmp-cmdline' },
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
@@ -52,12 +53,6 @@ local plugins = {
                 }
             }
         end,
-    },
-    {
-        'VonHeikemen/fine-cmdline.nvim',
-        dependencies = {
-            { 'MunifTanjim/nui.nvim' }
-        }
     },
     {
         'alexghergh/nvim-tmux-navigation',
@@ -129,7 +124,7 @@ local plugins = {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        lazy = false,
+        event = "VeryLazy",
         opts = {
             -- your configuration comes here
             -- or leave it empty to use the default settings
@@ -137,7 +132,28 @@ local plugins = {
         }
     },
     'mrcjkb/haskell-tools.nvim',
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    'xiyaowong/transparent.nvim',
+    {
+      'stevearc/oil.nvim',
+      opts = {},
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+      "folke/noice.nvim",
+      event = "VeryLazy",
+      opts = {
+        -- add any options here
+      },
+      dependencies = {
+        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+        "MunifTanjim/nui.nvim",
+        -- OPTIONAL:
+        --   `nvim-notify` is only needed, if you want to use the notification view.
+        --   If not available, we use `mini` as the fallback
+        "rcarriga/nvim-notify",
+        }
+    }
 }
 
 local opts = {}
