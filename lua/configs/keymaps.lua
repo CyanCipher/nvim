@@ -19,6 +19,11 @@ wk.register({
     ["<leader>u"] = { vim.cmd.UndotreeToggle, "UndoTree"}
 })
 
+wk.register({
+    ["<leader>n"] = { name = "Noice" },
+    ["<leader>nd"] = { "<cmd>NoiceDismiss<CR>", "Noice Dismiss"}
+})
+
 vim.keymap.set("v", "N", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "T", ":m '<-2<CR>gv=gv")
 
