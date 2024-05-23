@@ -82,6 +82,7 @@ local plugins = {
         },
         config = function()
             local dap, dapui = require('dap'), require('dapui')
+            local wk = require("which-key")
             require('dap-go').setup()
             require('dapui').setup()
             require('dap-python').setup()
@@ -98,8 +99,12 @@ local plugins = {
                 dapui.close()
             end
 
-            vim.keymap.set("n", "<leader>dt", dap.toggle_breakpoint, {})
-            vim.keymap.set("n", "<leader>dc", dap.continue, {})
+            wk.register({
+                ["<leader>d"] = { name = "+DAP"},
+                ["<leader>dt"] = {dap.toggle_breakpoint, "Toggle Breakpoint"},
+                ["<leader>dc"] = {dap.continue, "Continue"},
+
+            })
         end,
 
     },
@@ -165,6 +170,13 @@ local plugins = {
         end,
     },
     { "rose-pine/neovim", name = "rose-pine" },
+    {
+      "tadmccorkle/markdown.nvim",
+      ft = "markdown", -- or 'event = "VeryLazy"'
+      opts = {
+        -- configuration here or empty for defaults
+    }
+}
 }
 
 local opts = {}
