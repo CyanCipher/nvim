@@ -1,18 +1,50 @@
 local lualine = require('lualine')
 
+--local colors = {
+--  bg       = '#202328',
+--  fg       = '#bbc2cf',
+--  yellow   = '#ECBE7B',
+--  cyan     = '#008080',
+--  darkblue = '#081633',
+--  green    = '#98be65',
+--  orange   = '#FF8800',
+--  violet   = '#a9a1e1',
+--  magenta  = '#c678dd',
+--  blue     = '#51afef',
+--  red      = '#ec5f67',
+--}
+
+
+--Solarized Edition
+--local colors = {
+--  bg       = '#073642',
+--  fg       = '#fdd6e3',
+--  yellow   = '#b58900',
+--  cyan     = '#2aa198',
+--  darkblue = '#081633',
+--  green    = '#859900',
+--  orange   = '#cb4b16',
+--  violet   = '#6c71c4',
+--  magenta  = '#d33682',
+--  blue     = '#268bd2',
+--  red      = '#dc322f',
+--}
+
+-- Rose Pine colors
 local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  bg       = '#191724',
+  fg       = '#e0def4',
+  yellow   = '#f6c177',
+  cyan     = '#9ccfd8',
+  darkblue = '#286983',
+  green    = '#56949f',
+  orange   = '#ea9a97',
+  violet   = '#c4a7e7',
+  magenta  = '#b4637a',
+  blue     = '#3e8fb0',
+  red      = '#eb6f92',
 }
+
 
 local conditions = {
   buffer_not_empty = function()

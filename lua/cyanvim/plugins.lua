@@ -153,7 +153,18 @@ local plugins = {
         --   If not available, we use `mini` as the fallback
         "rcarriga/nvim-notify",
         }
-    }
+    },
+    {
+        'maxmx03/solarized.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+          vim.o.background = 'dark' -- or 'light'
+
+          vim.cmd.colorscheme 'solarized'
+        end,
+    },
+    { "rose-pine/neovim", name = "rose-pine" },
 }
 
 local opts = {}

@@ -19,7 +19,7 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 
 vim.g.vimtex_view_general_viewer = 'zathura'
 vim.g.vimtex_compiler_method = 'latexmk'
