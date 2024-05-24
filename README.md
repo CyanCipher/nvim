@@ -11,3 +11,7 @@ A simple and lightweight Neovim configuration.
 - Copy the configs folder to `~/.config/nvim`
 - Run :PackerSync again to install all the plugins
 - Done 👍
+
+## Screenshots
+![Neovim Screenshots](https://github.com/CyanCipher/nvim/blob/main/Screenshots/header.png)
+![Neovim Screenshots](https://github.com/CyanCipher/nvim/blob/main/Screenshots/image.png)
