@@ -175,8 +175,11 @@ local plugins = {
       ft = "markdown", -- or 'event = "VeryLazy"'
       opts = {
         -- configuration here or empty for defaults
+      }
+    },
+    {
+        "lewis6991/gitsigns.nvim"
     }
-}
 }
 
 local opts = {}
