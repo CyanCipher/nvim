@@ -1,6 +1,6 @@
 require('gitsigns').setup {
   signs = {
-    add          = { text = '┃' },
+    add          = { text = '┃', bg = '#21202e' },
     change       = { text = '┃' },
     delete       = { text = '_' },
     topdelete    = { text = '‾' },
