@@ -23,6 +23,11 @@ wk.register({
     ["<leader>n"] = { name = "Noice" },
     ["<leader>nd"] = { "<cmd>NoiceDismiss<CR>", "Noice Dismiss"}
 })
+wk.register({
+    ["<leader>g"] = { name = "+Git"},
+    ["<leader>gb"] = { ":Gitsigns blame_line<CR>", "Git Blame For current line"},
+    ["<leader>gf"] = { vim.cmd.Git, "Fugitive"}
+})
 
 vim.keymap.set("v", "N", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "T", ":m '<-2<CR>gv=gv")
