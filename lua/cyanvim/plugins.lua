@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
@@ -14,16 +14,25 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 
 local plugins = {
-    'wbthomason/packer.nvim',
     'EdenEast/nightfox.nvim',
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.5',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-    'mbbill/undotree',
-    'tpope/vim-fugitive',
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        lazy = true
+    },
+    {
+        'mbbill/undotree',
+        lazy = true
+    },
+    {
+        'tpope/vim-fugitive',
+        lazy = true
+    },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -71,8 +80,12 @@ local plugins = {
             vim.keymap.set('n', "<C-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
         end
     },
-    'nvim-lua/plenary.nvim',
-    'ThePrimeagen/harpoon',
+    {
+        'nvim-lua/plenary.nvim'
+    },
+    {
+        'ThePrimeagen/harpoon'
+    },
     {
         'mfussenegger/nvim-dap',
         dependencies = {
@@ -100,9 +113,9 @@ local plugins = {
             end
 
             wk.register({
-                ["<leader>d"] = { name = "+DAP"},
-                ["<leader>dt"] = {dap.toggle_breakpoint, "Toggle Breakpoint"},
-                ["<leader>dc"] = {dap.continue, "Continue"},
+                ["<leader>d"] = { name = "+DAP" },
+                ["<leader>dt"] = { dap.toggle_breakpoint, "Toggle Breakpoint" },
+                ["<leader>dc"] = { dap.continue, "Continue" },
 
             })
         end,
@@ -115,70 +128,118 @@ local plugins = {
             require("nvim-autopairs").setup {}
         end
     },
-    'lervag/vimtex',
-    'ellisonleao/gruvbox.nvim',
-    'xiyaowong/transparent.nvim',
-    { 'kepano/flexoki-neovim',           name = 'flexoki' },
-    'RRethy/nvim-base16',
-    'HiPhish/rainbow-delimiters.nvim',
-    { 'AlphaTechnolog/pywal.nvim', name = 'pywal' },
-    'nvim-neotest/nvim-nio',
+    {
+        'lervag/vimtex',
+        lazy = true
+    },
+    {
+        'ellisonleao/gruvbox.nvim',
+        lazy = true
+    },
+    {
+        'xiyaowong/transparent.nvim',
+        lazy = true
+    },
+    {
+        'kepano/flexoki-neovim',
+        name = 'flexoki',
+        lazy = true
+    },
+    {
+        'RRethy/nvim-base16',
+        lazy = true
+    },
+    {
+        'HiPhish/rainbow-delimiters.nvim',
+    },
+    {
+        'AlphaTechnolog/pywal.nvim',
+        name = 'pywal',
+        lazy = true
+    },
+    {
+        'nvim-neotest/nvim-nio',
+        lazy = true
+    },
     {
         "folke/which-key.nvim",
+        lazy = true,
         init = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
         event = "VeryLazy",
         opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
         }
     },
-    'mrcjkb/haskell-tools.nvim',
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    'xiyaowong/transparent.nvim',
     {
-      'stevearc/oil.nvim',
-      opts = {},
-      dependencies = { "nvim-tree/nvim-web-devicons" },
+        'mrcjkb/haskell-tools.nvim',
+        lazy = true
     },
     {
-      "folke/noice.nvim",
-      event = "VeryLazy",
-      opts = {
-        -- add any options here
-      },
-      dependencies = {
-        -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-        "MunifTanjim/nui.nvim",
-        -- OPTIONAL:
-        --   `nvim-notify` is only needed, if you want to use the notification view.
-        --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {}
+    },
+    {
+        'xiyaowong/transparent.nvim',
+        lazy = true
+    },
+    {
+        'stevearc/oil.nvim',
+        lazy = true,
+        opts = {},
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+        "folke/noice.nvim",
+        lazy = true,
+        event = "VeryLazy",
+        opts = {
+        },
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
         }
     },
     {
         'maxmx03/solarized.nvim',
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
-          vim.o.background = 'dark' -- or 'light'
-
-          vim.cmd.colorscheme 'solarized'
+            vim.o.background = 'dark'
+            vim.cmd.colorscheme 'solarized'
         end,
     },
-    { "rose-pine/neovim", name = "rose-pine" },
     {
-      "tadmccorkle/markdown.nvim",
-      ft = "markdown", -- or 'event = "VeryLazy"'
-      opts = {
-        -- configuration here or empty for defaults
-      }
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = true
     },
     {
-        "lewis6991/gitsigns.nvim"
+        "tadmccorkle/markdown.nvim",
+        lazy = true,
+        ft = "markdown",
+        opts = {
+        }
+    },
+    {
+        "lewis6991/gitsigns.nvim",
+        lazy = true
+    },
+    {
+        "chrisgrieser/nvim-recorder",
+        lazy = true,
+        dependencies = "rcarriga/nvim-notify",
+        opts = {}
+    },
+    {
+        'SmiteshP/nvim-navic',
+        lazy = true
+    },
+    {
+        'LunarVim/breadcrumbs.nvim',
+        lazy = true
     }
 }
 
