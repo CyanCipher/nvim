@@ -26,8 +26,7 @@ local plugins = {
         lazy = true
     },
     {
-        'mbbill/undotree',
-        lazy = true
+        'mbbill/undotree'
     },
     {
         'tpope/vim-fugitive',
