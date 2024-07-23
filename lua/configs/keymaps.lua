@@ -3,30 +3,28 @@ local wk = require("which-key")
 vim.g.mapleader = " "
 
 
-wk.register({
-    p = {
-        name = "Files",
-        v = { vim.cmd.Oil, "File Manager"}
-    },
-}, { prefix = "<leader>" })
-
-wk.register({
-    ["<leader>wq"] = { "<cmd>wq<CR>", "Save and Exit"},
-    ["<leader>q"] = { "<cmd>q<CR>", "Quit"},
-    ["<leader>w"] = { "<cmd>w<CR>", "Save"},
-    ["<leader>y"] = { "\"+y", "Copy"},
-    ["<leader>n"] = { "n", "Jump to next search"},
-    ["<leader>u"] = { vim.cmd.UndotreeToggle, "UndoTree"}
+wk.add({
+    { "<leader>p", group = "Files" },
+    { "<leader>pv", vim.cmd.Oil, desc = "Launch File Maneger" }
 })
 
-wk.register({
-    ["<leader>n"] = { name = "Noice" },
-    ["<leader>nd"] = { "<cmd>NoiceDismiss<CR>", "Noice Dismiss"}
+wk.add({
+    { "<leader>wq", "<cmd>wq<CR>", desc ="Save and Exit" },
+    { "<leader>q", "<cmd>q<CR>", desc ="Quit" },
+    { "<leader>w", "<cmd>w<CR>", desc ="Save" },
+    { "<leader>y", "\"+y", desc ="Copy" },
+    { "<leader>n", "n", desc = "Jump to next search" },
+    { "<leader>u", vim.cmd.UndotreeToggle, desc = "UndoTree" }
 })
-wk.register({
-    ["<leader>g"] = { name = "+Git"},
-    ["<leader>gb"] = { ":Gitsigns blame_line<CR>", "Git Blame For current line"},
-    ["<leader>gf"] = { vim.cmd.Git, "Fugitive"}
+
+wk.add({
+    { "<leader>n",  group = "Noice" },
+    { "<leader>nd", "<cmd>NoiceDismiss<CR>", desc = "Noice Dismiss" }
+})
+wk.add({
+    { "<leader>g",  group = "Git" },
+    { "<leader>gb", ":Gitsigns blame_line<CR>", desc = "Git Blame For current line" },
+    { "<leader>gf", vim.cmd.Git,                desc = "Fugitive" }
 })
 
 vim.keymap.set("v", "N", ":m '>+1<CR>gv=gv")
@@ -45,4 +43,3 @@ vim.keymap.set("n", "n", "j")
 vim.keymap.set("n", "s", "l")
 vim.keymap.set("v", "n", "j")
 vim.keymap.set("v", "s", "l")
-

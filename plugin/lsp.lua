@@ -7,28 +7,20 @@ lsp_zero.on_attach(function(_, bufnr)
 
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
-    wk.register({
-        m = {
-            name = "Def",
-            d = { function() vim.lsp.buf.definition() end, "Goto Definition" },
-            f = { function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, "Format" },
-        },
-
-        v = {
-            name = "+LSP",
-            w = { function() vim.lsp.buf.workspace_symbol() end, "Workspace Symbol"},
-            c = { function() vim.lsp.buf.code_action() end, "Code Actions"},
-            r = { function() vim.lsp.buf.references() end, "References"},
-            n = { function() vim.lsp.buf.rename() end, "Rename"},
-            k = { function() vim.lsp.buf.hover() end, "Hover Tips"},
-            d = {
-                name = "+Diagnostic",
-                d = { function() vim.diagnostic.open_float() end, "Launch Diagnostics"},
-                n = { function() vim.diagnostic.goto_next() end, "Goto Next"},
-                p = { function() vim.diagnostic.goto_prev() end, "Goto Previous"},
-            }
-        },
-    }, { prefix = "<leader>" })
+    wk.add({
+        { "<leader>m", group = "Definition" },
+        { "<leader>md", function() vim.lsp.buf.definition() end, desc = "Goto Definition" },
+        { "<leader>mf", function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, desc = "Format" },
+        { "<leader>v", group = "LSP" },
+        { "<leader>vw", function() vim.lsp.buf.workspace_symbol() end, desc = "Workspace Symbol" },
+        { "<leader>vc", function() vim.lsp.buf.code_action() end, desc = "Code Actions" },
+        { "<leader>vx", function() vim.lsp.buf.references() end, desc = "References" },
+        { "<leader>vr", function() vim.lsp.buf.rename() end, desc = "Rename" },
+        { "<leader>vh", function() vim.lsp.buf.hover() end, desc = "Hover Tips" },
+        { "<leader>vd", function() vim.diagnostic.open_float() end, desc = "Launch Diagnostics" },
+        { "<leader>vdn", function() vim.diagnostic.goto_next() end, desc = "Goto Next" },
+        { "<leader>vdp", function() vim.diagnostic.goto_prev() end, desc = "Goto Previous" },
+    })
 end)
 
 require('mason').setup({})

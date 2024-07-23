@@ -6,7 +6,7 @@ require("recorder").setup {
 	slots = { "a", "b" },
 
 	mapping = {
-		startStopRecording = "q",
+		startStopRecording = "<m-q>",
 		playMacro = "Q",
 		switchSlot = "<C-q>",
 		editMacro = "cq",
@@ -26,7 +26,7 @@ require("recorder").setup {
 	-- If enabled, only essential notifications are sent.
 	-- If you do not use a plugin like nvim-notify, set this to `true`
 	-- to remove otherwise annoying messages.
-	lessNotifications = false,
+	lessNotifications = true,
 
 	-- Use nerdfont icons in the status bar components and keymap descriptions
 	useNerdfontIcons = true,

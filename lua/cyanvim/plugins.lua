@@ -111,10 +111,10 @@ local plugins = {
 				dapui.close()
 			end
 
-			wk.register({
-				["<leader>d"] = { name = "+DAP" },
-				["<leader>dt"] = { dap.toggle_breakpoint, "Toggle Breakpoint" },
-				["<leader>dc"] = { dap.continue, "Continue" },
+			wk.add({
+				{ "<leader>d", group = "+DAP" },
+				{ "<leader>dt", dap.toggle_breakpoint, desc ="Toggle Breakpoint" },
+				{ "<leader>dc", dap.continue, desc = "Continue" },
 
 			})
 		end,
