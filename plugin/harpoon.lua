@@ -3,7 +3,7 @@ local ui = require("harpoon.ui")
 local wk = require("which-key")
 
 wk.add({
-    { "<leader>h", group = "Harpoon"},
+    { "<leader>h", group = "Harpoon", icon = ""},
     { "<leader>ha", mark.add_file, desc = "Add File"},
     { "<leader>he", ui.toggle_quick_menu, desc = "Toggle UI Menu"},
     { "<m-h>", function() ui.nav_file(1) end, desc = "Move to first file"},

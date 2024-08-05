@@ -112,7 +112,7 @@ local plugins = {
 			end
 
 			wk.add({
-				{ "<leader>d", group = "+DAP" },
+				{ "<leader>d", group = "+DAP", icon = "" },
 				{ "<leader>dt", dap.toggle_breakpoint, desc ="Toggle Breakpoint" },
 				{ "<leader>dc", dap.continue, desc = "Continue" },
 
@@ -259,7 +259,21 @@ local plugins = {
         'echasnovski/mini.icons',
         name = 'miniicons',
         priority = 1000
-    }
+    },
+    {
+        'jzone1366/twilight.nvim',
+        lazy = false
+    },
+    {
+        'paulo-granthon/hyper.nvim',
+        lazy = false
+    },
+    {
+        'bluz71/vim-moonfly-colors',
+        name = 'moonfly',
+        lazy = false,
+        priority = 1000
+    },
 }
 
 local opts = {}

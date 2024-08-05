@@ -8,10 +8,10 @@ lsp_zero.on_attach(function(_, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
     wk.add({
-        { "<leader>m", group = "Definition" },
+        { "<leader>m", group = "Definition", icon = "" },
         { "<leader>md", function() vim.lsp.buf.definition() end, desc = "Goto Definition" },
         { "<leader>mf", function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, desc = "Format" },
-        { "<leader>v", group = "LSP" },
+        { "<leader>v", group = "LSP", icon = "" },
         { "<leader>vw", function() vim.lsp.buf.workspace_symbol() end, desc = "Workspace Symbol" },
         { "<leader>vc", function() vim.lsp.buf.code_action() end, desc = "Code Actions" },
         { "<leader>vx", function() vim.lsp.buf.references() end, desc = "References" },

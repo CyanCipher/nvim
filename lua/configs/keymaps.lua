@@ -11,10 +11,10 @@ wk.add({
 wk.add({
     { "<leader>wq", "<cmd>wq<CR>", desc ="Save and Exit" },
     { "<leader>q", "<cmd>q<CR>", desc ="Quit" },
-    { "<leader>w", "<cmd>w<CR>", desc ="Save" },
-    { "<leader>y", "\"+y", desc ="Copy" },
+    { "<leader>w", "<cmd>w<CR>", desc ="Save", icon = "󰆓" },
+    { "<leader>y", "\"+y", desc ="Copy", icon = "" },
     { "<leader>n", "n", desc = "Jump to next search" },
-    { "<leader>u", vim.cmd.UndotreeToggle, desc = "UndoTree" }
+    { "<leader>u", vim.cmd.UndotreeToggle, desc = "UndoTree", icon = "󰣜" }
 })
 
 wk.add({

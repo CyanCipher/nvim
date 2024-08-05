@@ -2,4 +2,4 @@ require("cyanvim.plugins")
 require("cyanvim.core")
 require("configs.keymaps")
 
-vim.cmd("colorscheme oxocarbon")
+vim.cmd("colorscheme moonfly")
