@@ -132,8 +132,8 @@ local plugins = {
 		lazy = true
 	},
 	{
-		'ellisonleao/gruvbox.nvim',
-		lazy = true
+        'morhetz/gruvbox',
+		lazy = false 
 	},
 	{
 		'xiyaowong/transparent.nvim',
