@@ -227,12 +227,6 @@ local plugins = {
 		lazy = true
 	},
 	{
-		"chrisgrieser/nvim-recorder",
-		lazy = true,
-		dependencies = "rcarriga/nvim-notify",
-		opts = {}
-	},
-	{
 		'SmiteshP/nvim-navic',
 		lazy = true
 	},

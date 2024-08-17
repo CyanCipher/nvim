@@ -2,7 +2,7 @@ require('gitsigns').setup {
   signs = {
     add          = { text = '┃', bg = '#21202e' },
     change       = { text = '┃' },
-    delete       = { text = '_' },
+    delete       = { text = '-' },
     topdelete    = { text = '‾' },
     changedelete = { text = '~' },
     untracked    = { text = '┆' },
