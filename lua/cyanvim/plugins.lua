@@ -115,12 +115,34 @@ local plugins = {
 				{ "<leader>d", group = "+DAP", icon = "" },
 				{ "<leader>dt", dap.toggle_breakpoint, desc ="Toggle Breakpoint" },
 				{ "<leader>dc", dap.continue, desc = "Continue" },
-
+                { "<leader>dui", function ()
+                    require("dapui").toggle("sidebar");
+                end,
+                desc = "Debugger UI"},
 			})
 		end,
 
 	},
-	'nvim-tree/nvim-web-devicons',
+    {
+	    'nvim-tree/nvim-web-devicons',
+    },
+    {
+        "olexsmir/gopher.nvim",
+        ft = "go",
+        -- branch = "develop", -- if you want develop branch
+                               -- keep in mind, it might break everything
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "nvim-treesitter/nvim-treesitter",
+          "mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
+        },
+        -- (optional) will update plugin's deps on every update
+        --build = function()
+        --  vim.cmd.GoInstallDeps()
+        --end,
+        ---@type gopher.Config
+    opts = {},
+    },
 	{
 		'windwp/nvim-autopairs',
 		config = function()
@@ -201,6 +223,15 @@ local plugins = {
 			"rcarriga/nvim-notify",
 		}
 	},
+    {
+        "ibhagwan/fzf-lua",
+        -- optional for icon support
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+          -- calling `setup` is optional for customization
+          require("fzf-lua").setup({})
+        end
+    },
 	{
 		'maxmx03/solarized.nvim',
 		lazy = true,
