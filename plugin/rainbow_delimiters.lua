@@ -25,4 +25,3 @@ vim.g.rainbow_delimiters = {
         'RainbowDelimiterCyan',
     },
 }
-

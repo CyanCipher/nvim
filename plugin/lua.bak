@@ -4,11 +4,11 @@
 
 -- stylua: ignore
 local colors = {
-  blue   = '#80a0ff',
+  blue   = '#00B2FF',
   cyan   = '#79dac8',
-  black  = '#080808',
+  black  = '#161616',
   white  = '#c6c6c6',
-  red    = '#ff5189',
+  red    = '#D73A7F',
   violet = '#d183e8',
   grey   = '#303030',
 }
