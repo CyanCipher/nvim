@@ -53,6 +53,8 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
         ['<Enter>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
+        ['<M-n>'] = cmp.mapping.scroll_docs(4),
+        ['<M-t>'] = cmp.mapping.scroll_docs(-4),
     }),
 })
 
@@ -81,6 +83,7 @@ require 'lspconfig'.gleam.setup {}
 
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
+
 
 lspconfig.gopls.setup {
     cmd = {"gopls"},
