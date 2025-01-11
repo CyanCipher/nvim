@@ -300,6 +300,12 @@ local plugins = {
         -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
         -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     },
+    {
+        'loctvl842/monokai-pro.nvim',
+        name = 'monokai',
+        lazy = false,
+        priority = 1000
+    }
 }
 
 local opts = {}
