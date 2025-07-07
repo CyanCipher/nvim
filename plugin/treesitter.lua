@@ -47,3 +47,11 @@ parser_config.c3 = {
         branch = "main",
     },
 }
+parser_config.jai = {
+    install_info = {
+        url = "~/Code/jai/tree-sitter-jai",
+        files = {"src/parser.c"},
+        requires_generate_from_grammar = false,
+    },
+    filetype = "ja",
+}

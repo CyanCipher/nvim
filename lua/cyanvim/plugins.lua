@@ -49,6 +49,13 @@ local plugins = {
 			{ 'rafamadriz/friendly-snippets' },
 		}
 	},
+    {
+        'mfussenegger/nvim-lint',
+        event = {
+            "BufReadPre",
+            "BufNewFile",
+        },
+    },
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -85,6 +92,8 @@ local plugins = {
 			'rcarriga/nvim-dap-ui',
 			'leoluz/nvim-dap-go',
 			'mfussenegger/nvim-dap-python',
+            'julianolf/nvim-dap-lldb',
+            'theHamsta/nvim-dap-virtual-text',
 		},
 		config = function()
 			local dap, dapui = require('dap'), require('dapui')
@@ -92,6 +101,8 @@ local plugins = {
 			require('dap-go').setup()
 			require('dapui').setup()
 			require('dap-python').setup()
+            require('dap-lldb').setup()
+            require('nvim-dap-virtual-text').setup()
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
 			end
@@ -109,10 +120,17 @@ local plugins = {
 				{ "<leader>d", group = "+DAP", icon = "" },
 				{ "<leader>dt", dap.toggle_breakpoint, desc ="Toggle Breakpoint" },
 				{ "<leader>dc", dap.continue, desc = "Continue" },
+                { "<leader>di", dap.step_into, desc = "Step Into"},
+                { "<leader>do", dap.step_over, desc = "Step Over"},
+                { "<leader>db", dap.step_back, desc = "Step Back"},
                 { "<leader>dui", function ()
                     require("dapui").toggle("sidebar");
                 end,
                 desc = "Debugger UI"},
+                { "<leader>?", function ()
+                    require("dapui").eval(nil, {enter = true})
+                    end,
+                desc = "Evaluate line under cursor" }
 			})
 		end,
 
@@ -149,7 +167,7 @@ local plugins = {
 	},
 	{
         'morhetz/gruvbox',
-		lazy = false 
+		lazy = false
 	},
 	{
 		'xiyaowong/transparent.nvim',
@@ -226,15 +244,14 @@ local plugins = {
           require("fzf-lua").setup({})
         end
     },
-	{
-		'maxmx03/solarized.nvim',
-		lazy = true,
-		priority = 1000,
-		config = function()
-			vim.o.background = 'dark'
-			vim.cmd.colorscheme 'solarized'
-		end,
-	},
+    {
+        "Tsuzat/NeoSolarized.nvim",
+          lazy = false,
+          priority = 1000,
+          config = function()
+            vim.cmd [[ colorscheme NeoSolarized ]]
+          end
+    },
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -257,7 +274,7 @@ local plugins = {
 	},
 	{
 		'olimorris/onedarkpro.nvim',
-		priority = 1000, -- Ensure it loads first
+        lazy = true
 	},
 	{
 		'sainnhe/everforest'
@@ -268,11 +285,11 @@ local plugins = {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		priority = 1000
+        lazy = true
 	},
 	{
 		'nyoom-engineering/oxocarbon.nvim',
-		lazy = false
+		lazy = true
 	},
     {
         'echasnovski/mini.icons',
@@ -297,15 +314,23 @@ local plugins = {
         'MeanderingProgrammer/render-markdown.nvim',
         opts = {},
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     },
     {
         'loctvl842/monokai-pro.nvim',
         name = 'monokai',
         lazy = false,
         priority = 1000
-    }
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+}
 }
 
 local opts = {}

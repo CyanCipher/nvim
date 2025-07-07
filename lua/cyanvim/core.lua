@@ -29,3 +29,5 @@ vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_sign_column = "bg0"
 vim.g.gruvbox_italicize_strings = 1
 vim.maplocalleader = " "
+
+vim.treesitter.language.register('jai', 'ja')

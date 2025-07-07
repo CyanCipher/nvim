@@ -25,7 +25,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'pyright', 'lua_ls', 'rust_analyzer', 'clangd' },
+    ensure_installed = { 'pyright', 'lua_ls', 'rust_analyzer', 'clangd' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
@@ -80,6 +80,29 @@ cmp.setup.cmdline(':', {
 })
 
 require 'lspconfig'.gleam.setup {}
+
+
+-- GML LSP setup
+require('lspconfig').gml_lsp = {
+    default_config = {
+        cmd = {"/home/cyan/Code/gml-lsp/gml_lsp"},
+        filetypes = { "gml" },
+        root_dir = function(fname)
+            return vim.fn.getcwd()
+        end,
+    },
+}
+
+-- Attach LSP to GML files
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gml",
+  callback = function()
+    vim.lsp.start({
+      name = "gml-lsp",
+      cmd = { "/home/cyan/Code/gml-lsp/gml_lsp" },
+    })
+  end
+})
 
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
